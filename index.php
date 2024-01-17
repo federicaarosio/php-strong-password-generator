@@ -1,6 +1,14 @@
 <?php
 
+$passLength = $_GET['password-length'];
+$password = generatePassword();
+
 // Funzioni
+
+function generatePassword() {
+    $allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    return (str_shuffle($allCharacters));
+}
 
 
 ?>
@@ -29,6 +37,17 @@
                 <input type="number" name="password-length" id="password-length">
                 <button type="submit">Submit</button>
             </form>
+        </div>
+
+        <div class="result">
+            <p>
+
+                <?php 
+                    echo "Your password is:" . " $password "
+                ?>
+            </p>
+
+
         </div>
     </main>
 

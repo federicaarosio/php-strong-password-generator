@@ -1,14 +1,9 @@
 <?php
 
+include_once __DIR__ . '/partials/function.php';
+
 $passLength = intval($_GET['password-length']);
 $password = generatePassword($passLength);
-
-// Funzioni
-function generatePassword($chosenLength) {
-    $allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!$%&/()=?^*§°-_.:,;";
-    return substr(str_shuffle($allCharacters), 0, $chosenLength);
-}
-
 
 ?>
 

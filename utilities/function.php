@@ -7,7 +7,7 @@ function generatePassword($chosenLength) {
     $symbols = "!$&/()=?*-_.:,;";
 
     //Vanno bene tutti i caratteri
-    if ((!isset($_GET["letters"]) && !isset($_GET["numbers"]) && !isset($_GET["symbols"]))) {
+    if ((isset($_GET["letters"]) && isset($_GET["numbers"]) && isset($_GET["symbols"]) || (!isset($_GET["letters"]) && !isset($_GET["numbers"]) && !isset($_GET["symbols"])))) {
         return substr(str_shuffle($allCharacters), 0, $chosenLength);
     //solo lettere
     } elseif (isset($_GET["letters"]) && !isset($_GET["numbers"]) && !isset($_GET["symbols"])) {
